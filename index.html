@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GST Info Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 100px auto;
+      background: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px #ccc;
+    }
+
+    input {
+      padding: 10px;
+      width: 80%;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>GST Info Checker</h1>
+    <p>Enter GSTIN Number to Check Details</p>
+    <input type="text" id="gstin" placeholder="Enter GSTIN..." />
+    <button onclick="checkGST()">Search</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkGST() {
+      const gstin = document.getElementById("gstin").value;
+      const resultDiv = document.getElementById("result");
+
+      if (gstin.length !== 15) {
+        resultDiv.innerText = "Invalid GSTIN. It must be 15 characters.";
+        resultDiv.style.color = "red";
+      } else {
+        // Dummy output (no real API yet)
+        resultDiv.innerText = `GSTIN "${gstin}" seems valid. (Demo Output)`;
+        resultDiv.style.color = "green";
+      }
+    }
+  </script>
+</body>
+</html>
